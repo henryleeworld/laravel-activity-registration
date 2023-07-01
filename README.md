@@ -39,11 +39,11 @@ $ php artisan test
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/AFPeU8q.png)
+![](https://i.imgur.com/HwwImDp.png)
 > 檢查程式碼是否如預期般執行
 
-![](https://i.imgur.com/3irFt6R.png)
+![](https://i.imgur.com/2qQrW3L.png)
 > 活動有很多種，論壇、展覽、講座、研討會、社團活動、公益活動、演唱會、音樂劇、話劇、茶會、電影欣賞、親子活動等
 
-![](https://i.imgur.com/vTbwJuT.png)
+![](https://i.imgur.com/agKXYVq.png)
 > 活動內容本身變動機會不大，很固定，只需告知報名者是否報名成功
