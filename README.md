@@ -39,7 +39,7 @@ $ php artisan test
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/HwwImDp.png)
+![](https://i.imgur.com/DeQIbH5.png)
 > 檢查程式碼是否如預期般執行
 
 ![](https://i.imgur.com/2qQrW3L.png)
