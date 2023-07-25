@@ -18,7 +18,7 @@ class CompanyUserTest extends TestCase
     public function test_admin_can_access_company_users_page()
     {
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create();
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
 
         $response = $this->actingAs($user)->get(route('companies.users.index', $company->id));
 
@@ -30,7 +30,7 @@ class CompanyUserTest extends TestCase
         Mail::fake();
 
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create();
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
 
         $response = $this->actingAs($user)->post(route('companies.users.store', $company->id), [
             'email' => 'test@test.com',
@@ -51,7 +51,7 @@ class CompanyUserTest extends TestCase
     public function test_admin_can_edit_user_for_a_company()
     {
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create(['company_id' => $company->id]);
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
 
         $response = $this->actingAs($user)->put(route('companies.users.update', [$company->id, $user->id]), [
             'name' => 'updated user',
@@ -69,7 +69,7 @@ class CompanyUserTest extends TestCase
     public function test_admin_can_delete_user_for_a_company()
     {
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create(['company_id' => $company->id]);
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
 
         $response = $this->actingAs($user)->delete(route('companies.users.destroy', [$company->id, $user->id]));
 
@@ -106,7 +106,7 @@ class CompanyUserTest extends TestCase
         Mail::fake();
 
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create();
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
 
         $response = $this->actingAs($user)->post(route('companies.users.store', $company->id), [
             'email' => 'test@test.com',
@@ -142,7 +142,7 @@ class CompanyUserTest extends TestCase
     public function test_invitation_can_be_sent_only_once_for_user()
     {
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create();
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
 
         $this->actingAs($user)->post(route('companies.users.store', $company->id), [
             'email' => 'test@test.com',

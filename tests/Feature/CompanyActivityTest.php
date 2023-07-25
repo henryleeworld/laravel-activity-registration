@@ -227,7 +227,7 @@ class CompanyActivityTest extends TestCase
     public function test_admin_can_view_companies_activities()
     {
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create();
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
 
         $response = $this->actingAs($user)->get(route('companies.activities.index', $company, $company));
 
@@ -237,7 +237,7 @@ class CompanyActivityTest extends TestCase
     public function test_admin_can_create_activity_for_company()
     {
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create();
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
         $guide = User::factory()->guide()->create();
 
         $response = $this->actingAs($user)->post(route('companies.activities.store', $company->id), [
@@ -263,7 +263,7 @@ class CompanyActivityTest extends TestCase
     public function test_admin_can_edit_activity_for_company()
     {
         $company = Company::factory()->create();
-        $user = User::factory()->admin()->create();
+        $user = User::factory()->companyOwner()->create(['company_id' => $company->id]);
         $guide = User::factory()->guide()->create();
         $activity = Activity::factory()->create(['company_id' => $company->id]);
 
