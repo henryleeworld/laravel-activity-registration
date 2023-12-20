@@ -9,7 +9,7 @@
         "barryvdh/laravel-dompdf": "^2.0",
         "guzzlehttp/guzzle": "^7.8",
         "intervention/image": "^2.7",
-        "laravel/framework": "^10.34",
+        "laravel/framework": "^10.35",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8"
     },
@@ -20,7 +20,7 @@
         "laravel/sail": "^1.25",
         "mockery/mockery": "^1.6.6",
         "nunomaduro/collision": "^7.10",
-        "phpunit/phpunit": "^10.4",
+        "phpunit/phpunit": "^10.5",
         "spatie/laravel-ignition": "^2.3"
     },
     "autoload": {
